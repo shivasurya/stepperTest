@@ -8,9 +8,9 @@ import java.util.List;
 import stepper.ivb.com.sample.fragments.FormFragment;
 import stepper.ivb.com.sample.fragments.Instruction;
 import stepper.ivb.com.sample.fragments.TextFragment;
-import stepper.ivb.com.sample.library.progressMobileStepper;
+import stepper.ivb.com.sample.library.simpleMobileStepper;
 
-public class MainActivity extends progressMobileStepper {
+public class MainActivity extends simpleMobileStepper {
 
    List<Class> stepperFragmentList = new ArrayList<>();
 
