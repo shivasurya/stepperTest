@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#212121"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64sp"
+        android:orientation="horizontal"
+        android:elevation="5sp"
+        android:gravity="center_vertical"
+        android:paddingTop="24sp"
+        android:background="#F6F6F6">
+        <LinearLayout
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:layout_marginLeft="24sp"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="24sp"
+                android:layout_height="24sp"
+                android:background="@drawable/circle"
+                android:text="1"
+                android:gravity="center"
+                android:id="@+id/s1"
+                android:layout_centerHorizontal="true"
+                android:textColor="@android:color/white"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0sp"
+            android:layout_weight="4"
+            android:layout_marginStart="8sp"
+            android:layout_marginLeft="8sp"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+            <View
+                android:background="@color/colorAccent"
+                android:layout_width = "0sp"
+                android:layout_weight="0.33"
+                android:layout_height="1sp"
+                android:layout_marginTop="12sp"
+                android:layout_marginRight="8sp"
+                />
+            <TextView
+                android:layout_width="24sp"
+                android:layout_height="24sp"
+                android:background="@drawable/circle"
+                android:text="2"
+                android:gravity="center"
+                android:id="@+id/s2"
+                android:layout_centerHorizontal="true"
+                android:textColor="@android:color/white"
+                />
+            <View
+                android:background="@color/colorAccent"
+                android:layout_width = "0sp"
+                android:layout_weight="0.33"
+                android:layout_height="1sp"
+                android:layout_marginTop="12sp"
+                android:layout_toRightOf="@+id/s2"
+                android:layout_marginStart="10sp"
+                android:layout_marginLeft="8sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:layout_marginStart="8sp"
+            android:layout_marginLeft="8sp"
+            android:layout_marginEnd="24sp"
+            android:layout_marginRight="24sp"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:layout_width="24sp"
+                android:layout_height="24sp"
+                android:background="@drawable/circle"
+                android:text="3"
+                android:gravity="center"
+                android:id="@+id/s3"
+                android:layout_centerHorizontal="true"
+                android:textColor="@android:color/white"
+                />
+            </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:background="#F6F6F6"
+        android:layout_marginBottom="24sp"
+        android:elevation="5sp">
+        <TextView
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:gravity="center|top"
+            android:text="Choose Pizza"
+            android:textStyle="bold"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:gravity="center|top"
+            android:text="Add Address"
+            android:textStyle="bold"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:gravity="center|top"
+            android:text="Pay Now"
+            android:textStyle="bold"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="80sp"
+        android:src="@drawable/pizza"
+        />
+</LinearLayout>
