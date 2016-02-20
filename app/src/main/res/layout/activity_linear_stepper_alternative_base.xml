@@ -23,8 +23,9 @@
             <TextView
                 android:layout_width="24sp"
                 android:layout_height="24sp"
-                android:background="@drawable/circle"
-                android:text="1"
+                android:background="@drawable/alert"
+                android:drawableLeft="@drawable/warning"
+                android:padding="5sp"
                 android:gravity="center"
                 android:id="@+id/s1"
                 android:textColor="@android:color/white"
@@ -52,8 +53,10 @@
                 android:layout_width="24sp"
                 android:layout_height="24sp"
                 android:background="@drawable/circle"
-                android:text="2"
+                android:padding="5sp"
                 android:gravity="center"
+                android:drawableLeft="@drawable/pencil"
+                android:drawableStart="@drawable/pencil"
                 android:id="@+id/s2"
                 android:layout_centerHorizontal="true"
                 android:textColor="@android:color/white"
@@ -84,11 +87,11 @@
                 android:layout_width="24sp"
                 android:layout_height="24sp"
                 android:background="@drawable/circle"
-                android:text="3"
+                android:drawableLeft="@drawable/tick"
+                android:padding="5sp"
                 android:gravity="center"
                 android:id="@+id/s3"
-                android:textColor="@android:color/white"
-                />
+                android:textColor="@android:color/white" />
             </LinearLayout>
     </LinearLayout>
     <LinearLayout
