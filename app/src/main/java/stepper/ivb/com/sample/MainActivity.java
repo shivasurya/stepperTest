@@ -20,31 +20,6 @@ public class MainActivity extends simpleMobileStepper {
         stepperFragmentList.add(TextFragment.class);
         stepperFragmentList.add(FormFragment.class);
         stepperFragmentList.add(Instruction.class);
-        stepperFragmentList.add(TextFragment.class);
-        stepperFragmentList.add(TextFragment.class);
-        stepperFragmentList.add(FormFragment.class);
-        stepperFragmentList.add(Instruction.class);
-        stepperFragmentList.add(TextFragment.class);
-        stepperFragmentList.add(TextFragment.class);
-        stepperFragmentList.add(FormFragment.class);
-        stepperFragmentList.add(Instruction.class);
-        stepperFragmentList.add(TextFragment.class);
-        stepperFragmentList.add(TextFragment.class);
-        stepperFragmentList.add(FormFragment.class);
-        stepperFragmentList.add(Instruction.class);
-        stepperFragmentList.add(TextFragment.class);
-        stepperFragmentList.add(TextFragment.class);
-        stepperFragmentList.add(FormFragment.class);
-        stepperFragmentList.add(Instruction.class);
-        stepperFragmentList.add(TextFragment.class);
-        stepperFragmentList.add(TextFragment.class);
-        stepperFragmentList.add(FormFragment.class);
-        stepperFragmentList.add(Instruction.class);
-        stepperFragmentList.add(TextFragment.class);
-        stepperFragmentList.add(TextFragment.class);
-        stepperFragmentList.add(FormFragment.class);
-        stepperFragmentList.add(Instruction.class);
-        stepperFragmentList.add(TextFragment.class);
 
         return stepperFragmentList;
     }

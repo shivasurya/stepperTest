@@ -2,7 +2,6 @@ package stepper.ivb.com.sample.library;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 
 import java.util.List;
 
@@ -29,7 +28,6 @@ public class baseStepper {
 
     protected void onNextButtonClicked(){
         CURRENT_PAGE = mViewPager.getCurrentItem();
-        Log.d("CURRENT", String.valueOf(CURRENT_PAGE));
         if(resolveNavigation()) {
             stepperFragment current = (stepperFragment) fragmentAdapter.getItem(CURRENT_PAGE);
             if (current != null && current.onNextButtonHandler()) {
@@ -39,6 +37,14 @@ public class baseStepper {
         }
     }
 
+    protected boolean isLastFragment(){
+        CURRENT_PAGE = mViewPager.getCurrentItem();
+        stepperFragment current = (stepperFragment) fragmentAdapter.getItem(CURRENT_PAGE);
+        if (current != null && current.onNextButtonHandler()) {
+            return true;
+        }
+        return false;
+    }
     protected boolean resolveNavigation(){
         return CURRENT_PAGE != (TOTAL_PAGE - 1);
     }

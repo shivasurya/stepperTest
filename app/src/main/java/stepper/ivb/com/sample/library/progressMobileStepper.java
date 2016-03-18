@@ -101,7 +101,8 @@ public abstract class progressMobileStepper extends AppCompatActivity implements
         if(mBaseStepper.resolveNavigation()){
             return true;
         }
-        onStepperCompleted();
+        else if(mBaseStepper.isLastFragment())
+            onStepperCompleted();
         return  false;
 
     }

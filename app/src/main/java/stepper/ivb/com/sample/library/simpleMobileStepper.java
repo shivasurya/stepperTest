@@ -104,7 +104,8 @@ public abstract class simpleMobileStepper extends AppCompatActivity implements V
         if(mBaseStepper.resolveNavigation()){
             return true;
         }
-        onStepperCompleted();
+        else if(mBaseStepper.isLastFragment())
+            onStepperCompleted();
         return  false;
 
     }
