@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@android:color/black"
     android:layout_height="match_parent">
+<LinearLayout android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/stepperbody"
+    android:elevation="12sp"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="72sp"
         android:orientation="horizontal"
         android:elevation="5sp"
         android:background="#F6F6F6"
+        android:baselineAligned="false"
         >
         <LinearLayout
             android:layout_width="0sp"
             android:layout_height="match_parent"
             android:layout_marginTop="24sp"
-            android:layout_marginBottom="24sp"
+            android:layout_marginBottom="20sp"
             android:layout_marginLeft="24sp"
+            android:layout_marginStart="24sp"
             android:layout_weight="1"
             android:orientation="horizontal"
             >
         <TextView
             android:layout_width="24sp"
             android:layout_height="24sp"
-            android:background="@drawable/circle"
+            android:background="@drawable/greyish"
             android:text="1"
             android:gravity="center"
             android:textColor="@android:color/white"
@@ -31,7 +40,9 @@
             android:layout_height="wrap_content"
             android:text="Welcome"
             android:layout_marginLeft="8sp"
+            android:textColor="#707070"
             android:textStyle="bold"
+            android:textSize="12sp"
             />
             <View
                 android:background="#E7E7E7"
@@ -46,7 +57,7 @@
             android:layout_width="0sp"
             android:layout_height="match_parent"
             android:layout_marginTop="24sp"
-            android:layout_marginBottom="24sp"
+            android:layout_marginBottom="20sp"
             android:layout_marginLeft="8sp"
             android:layout_weight="1"
             android:orientation="horizontal"
@@ -63,8 +74,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Confirm"
+                android:textColor="#000"
                 android:layout_marginLeft="8sp"
+                android:layout_marginStart="8sp"
                 android:textStyle="bold"
+                android:textSize="14sp"
                 />
             <View
                 android:background="#E7E7E7"
@@ -72,23 +86,26 @@
                 android:layout_height="2sp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="8sp"
+                android:layout_marginStart="8sp"
                 />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="0sp"
             android:layout_height="match_parent"
             android:layout_marginTop="24sp"
-            android:layout_marginBottom="24sp"
+            android:layout_marginBottom="20sp"
             android:layout_marginLeft="8sp"
             android:layout_marginStart="8sp"
             android:layout_marginEnd="8sp"
             android:layout_marginRight="8sp"
             android:layout_weight="1"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="24sp"
                 android:layout_height="24sp"
-                android:background="@drawable/circle"
+                android:background="@drawable/greyish"
                 android:text="3"
                 android:gravity="center"
                 android:textColor="@android:color/white"
@@ -97,9 +114,70 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Purchase"
+                android:textColor="#707070"
                 android:layout_marginLeft="8sp"
                 android:textStyle="bold"
+                android:textSize="12sp"
                 />
         </LinearLayout>
     </LinearLayout>
+    <ScrollView
+        android:id="@+id/mobilescroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E7E7E7">
+
+        <stepper.ivb.com.sample.library.components.stepperView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/viewpager">
+
+        </stepper.ivb.com.sample.library.components.stepperView>
+
+    </ScrollView>
 </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:layout_height="48sp">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16sp"
+            android:layout_marginStart="16sp"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableLeft="@drawable/left"
+            android:drawableStart="@drawable/left"
+            android:paddingRight="5sp"
+            android:paddingEnd="5sp"
+            android:paddingLeft="0sp"
+            android:paddingStart="0sp"
+            android:text="Back"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="16sp"
+            android:layout_marginEnd="16sp"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableRight="@drawable/right"
+            android:drawableEnd="@drawable/right"
+            android:paddingLeft="5sp"
+            android:paddingStart="5sp"
+            android:paddingRight="5sp"
+            android:paddingEnd="5sp"
+            android:text="Next"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
