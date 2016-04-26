@@ -25,6 +25,7 @@ public abstract class simpleMobileStepper extends AppCompatActivity implements V
     private baseStepper mBaseStepper;
     private int RECOVERCURRENTSTATE = 0;
     private ScrollView mScroll;
+    private Bundle mBundle = new Bundle();
 
 
     @Override
@@ -58,13 +59,15 @@ public abstract class simpleMobileStepper extends AppCompatActivity implements V
         {
             mStepperFragmentList = init();
         }
-        mBaseStepper = new baseStepper(mViewPager, mStepperFragmentList, getSupportFragmentManager());
+        mBaseStepper = new baseStepper(mViewPager, mStepperFragmentList, getSupportFragmentManager(),mBundle);
         mBaseStepper.CURRENT_PAGE = RECOVERCURRENTSTATE;
         RECOVERCURRENTSTATE = 0;
         BackButtonConfig();
         updateUI();
     }
-
+    public void addBundle(Bundle bundle){
+        mBundle = bundle;
+    }
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putSerializable("HSTEPPERBASE",(Serializable)mStepperFragmentList);

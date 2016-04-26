@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 
@@ -33,12 +34,14 @@ public class FragmentStateCurrentPageAdapter extends FragmentStatePagerAdapter  
     @Override
     public final Fragment getItem(int index) {
         if(mPageReferenceMap.get(index)!=null) {
+            Log.d("old instance","old instance"+String.valueOf(index));
             return getItemAtIndex(index);
         }
         else
         {
             try {
                 Fragment obj = (Fragment) mStepperFragment.get(index).newInstance();
+                Log.d("new instance","new instance"+String.valueOf(index));
                 mPageReferenceMap.put(index, obj);
                 return obj;
             } catch (InstantiationException e) {
@@ -58,6 +61,7 @@ public class FragmentStateCurrentPageAdapter extends FragmentStatePagerAdapter  
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         super.destroyItem(container, position, object);
+        Log.d("delete",String.valueOf(position));
         mPageReferenceMap.remove(position);
     }
 

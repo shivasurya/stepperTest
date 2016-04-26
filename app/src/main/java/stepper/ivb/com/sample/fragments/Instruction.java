@@ -15,12 +15,27 @@ import stepper.ivb.com.sample.library.stepperFragment;
  * Created by S.Shivasurya on 1/20/2016 - androidStudio.
  */
 public class Instruction extends stepperFragment {
+
+    Bundle mBundle;
+
     @Override
     public boolean onNextButtonHandler() {
         Log.d("hello","last step");
+        Log.d("data",mBundle.getString("hello"));
         Toast.makeText(getContext(),"it works!!",Toast.LENGTH_LONG).show();
         return true;
     }
+
+    @Override
+    public void setArguments(Bundle args) {
+        mBundle = args;
+    }
+
+    @Override
+    public Bundle getArgument() {
+        return mBundle;
+    }
+
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }

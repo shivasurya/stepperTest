@@ -22,6 +22,7 @@ public abstract class progressMobileStepper extends AppCompatActivity implements
     private baseStepper mBaseStepper;
     private int RECOVERCURRENTSTATE = 0;
     private ScrollView mScroll;
+    private Bundle mBundle = new Bundle();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,12 +55,16 @@ public abstract class progressMobileStepper extends AppCompatActivity implements
         {
             mStepperFragmentList = init();
         }
-        mBaseStepper = new baseStepper(mViewPager, mStepperFragmentList, getSupportFragmentManager());
+        mBaseStepper = new baseStepper(mViewPager, mStepperFragmentList, getSupportFragmentManager(),mBundle);
         mBaseStepper.CURRENT_PAGE = RECOVERCURRENTSTATE;
         RECOVERCURRENTSTATE = 0;
         BackButtonConfig();
         updateUI();
         mStepperProgress.setMax(mBaseStepper.TOTAL_PAGE);
+    }
+
+    public void addBundle(Bundle bundle){
+        mBundle = bundle;
     }
 
     @Override

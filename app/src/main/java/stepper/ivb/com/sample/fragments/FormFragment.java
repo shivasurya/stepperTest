@@ -2,6 +2,7 @@ package stepper.ivb.com.sample.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import stepper.ivb.com.sample.library.stepperFragment;
  * Created by S.Shivasurya on 1/19/2016 - androidStudio.
  */
 public class FormFragment extends stepperFragment {
+
+    Bundle mBundle;
 
     public FormFragment(){
 
@@ -34,4 +37,18 @@ public class FormFragment extends stepperFragment {
     public boolean onNextButtonHandler() {
         return true;
     }
+
+    @Override
+    public void setArguments(Bundle args) {
+        Log.d("setting","wetting");
+        mBundle =  args;
+        mBundle.putString("hello","google");
+    }
+
+    @Override
+    public Bundle getArgument() {
+        return mBundle;
+    }
+
+
 }
