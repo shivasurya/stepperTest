@@ -29,9 +29,6 @@ public abstract class horizontalStepper extends AppCompatActivity implements Vie
     private ScrollView mScroll;
     private TextView[] mTitleTextview = new TextView[3];
     private TextView[] mTextTitleView = new TextView[3];
-    private TextView mCurrentTextView;
-    private Integer mCurrentResource;
-    private String mCurrentTitle;
     private Bundle mBundle = new Bundle();
 
 
@@ -79,7 +76,7 @@ public abstract class horizontalStepper extends AppCompatActivity implements Vie
         mBaseStepper.CURRENT_PAGE = RECOVERCURRENTSTATE;
         RECOVERCURRENTSTATE = 0;
         BackButtonConfig();
-        updateUI();
+        currentUpdateUI();
     }
 
     public void addBundle(Bundle bundle){
@@ -98,6 +95,12 @@ public abstract class horizontalStepper extends AppCompatActivity implements Vie
         outState.putInt("HCURRENT",mBaseStepper.CURRENT_PAGE);
         outState.putBundle("HBUNDLE",mBaseStepper.getBundle());
         super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        currentUpdateUI();
+        super.onRestoreInstanceState(savedInstanceState);
     }
 
     protected void BackButtonConfig(){
@@ -122,7 +125,7 @@ public abstract class horizontalStepper extends AppCompatActivity implements Vie
                 mTitleTextview[mBaseStepper.CURRENT_PAGE%3].setBackgroundResource(R.drawable.greyish);
                 mBaseStepper.onBackButtonClicked();
                 BackButtonConfig();
-                updateUI();
+                updateBackUI();
                 break;
         }
     }
@@ -142,6 +145,15 @@ public abstract class horizontalStepper extends AppCompatActivity implements Vie
         return false;
     }
 
+    public void updateBackUI(){
+        if((mBaseStepper.CURRENT_PAGE+1)%3==0) {
+            mTextTitleView[0].setText(mTitleData.get(mBaseStepper.CURRENT_PAGE-2));
+            mTextTitleView[1].setText(mTitleData.get(mBaseStepper.CURRENT_PAGE-1));
+            mTextTitleView[2].setText(mTitleData.get(mBaseStepper.CURRENT_PAGE));
+        }
+        mTitleTextview[mBaseStepper.CURRENT_PAGE%3].setBackgroundResource(R.drawable.circle);
+        mScroll.pageScroll(View.FOCUS_UP);
+    }
     public void updateUI(){
         if(mBaseStepper.CURRENT_PAGE%3==0) {
             mTextTitleView[0].setText(mTitleData.get(mBaseStepper.CURRENT_PAGE));
@@ -150,6 +162,35 @@ public abstract class horizontalStepper extends AppCompatActivity implements Vie
         }
             mTitleTextview[mBaseStepper.CURRENT_PAGE%3].setBackgroundResource(R.drawable.circle);
             mScroll.pageScroll(View.FOCUS_UP);
+    }
+    public void currentUpdateUI(){
+        int mOther,mOther2;
+        int titlemOther,titlemOther2;
+        if(mBaseStepper.CURRENT_PAGE%3==0)
+        {
+            mOther = 1;
+            mOther2 = 2;
+            titlemOther = mBaseStepper.CURRENT_PAGE+mOther;
+            titlemOther2 = mBaseStepper.CURRENT_PAGE+mOther2;
+        }
+        else if(mBaseStepper.CURRENT_PAGE%3==1)
+        {
+            mOther = 0;
+            mOther2 = 2;
+            titlemOther = mBaseStepper.CURRENT_PAGE-1;
+            titlemOther2 = mBaseStepper.CURRENT_PAGE+1;
+        }
+        else
+        {
+            mOther = 0;
+            mOther2 = 1;
+            titlemOther = mBaseStepper.CURRENT_PAGE-2;
+            titlemOther2 = mBaseStepper.CURRENT_PAGE-1;
+        }
+        mTextTitleView[mBaseStepper.CURRENT_PAGE%3].setText(mTitleData.get(mBaseStepper.CURRENT_PAGE));
+        mTextTitleView[mOther].setText(mTitleData.get(titlemOther));
+        mTextTitleView[mOther2].setText(mTitleData.get(titlemOther2));
+        mTitleTextview[mBaseStepper.CURRENT_PAGE%3].setBackgroundResource(R.drawable.circle);
     }
     public abstract void onStepperCompleted(Bundle bundle);
     public List<Class> init(){
