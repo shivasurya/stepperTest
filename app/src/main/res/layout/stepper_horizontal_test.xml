@@ -13,11 +13,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="72sp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:clickable="true"
-            android:baselineAligned="false"
-            >
-                <TextView
+            android:baselineAligned="false">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_height="match_parent">
+            <TextView
                     android:layout_marginTop="24sp"
                     android:layout_marginBottom="20sp"
                     android:layout_marginLeft="24sp"
@@ -36,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:text="Buy Now"
                     android:ellipsize="end"
-                    android:layout_marginTop="28sp"
+                    android:layout_marginTop="25sp"
                     android:layout_marginBottom="20sp"
                     android:maxLines="1"
                     android:id="@+id/firsttext"
@@ -47,7 +49,7 @@
                     android:textColor="#707070"
                     android:textSize="12sp"
                     />
-
+            </LinearLayout>
             <View
                 android:layout_width="0sp"
                 android:layout_height="2sp"
@@ -55,6 +57,11 @@
                 android:layout_weight="1"
                 android:background="#e7e7e7"
                 />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_height="match_parent">
             <TextView
                 android:layout_width="24sp"
                 android:layout_height="24sp"
@@ -73,7 +80,7 @@
                 android:layout_weight="0.5"
                 android:layout_height="wrap_content"
                 android:text="Pay Now"
-                android:layout_marginTop="28sp"
+                android:layout_marginTop="25sp"
                 android:layout_marginBottom="20sp"
                 android:maxLines="1"
                 android:layout_marginRight="8sp"
@@ -84,6 +91,7 @@
                 android:textSize="12sp"
                 android:id="@+id/secondtext"
                 />
+            </LinearLayout>
             <View
                 android:layout_width="0sp"
                 android:layout_height="2sp"
@@ -91,6 +99,12 @@
                 android:layout_weight="1"
                 android:background="#e7e7e7"
                 />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:id="@+id/ll"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_height="match_parent">
             <TextView
                 android:layout_marginTop="24sp"
                 android:layout_marginBottom="20sp"
@@ -113,14 +127,14 @@
                 android:text="Deliver"
                 android:ellipsize="end"
                 android:id="@+id/thirdtext"
-                android:layout_marginTop="28sp"
+                android:layout_marginTop="25sp"
                 android:layout_marginBottom="20sp"
                 android:maxLines="1"
                 android:layout_marginRight="8sp"
                 android:layout_marginEnd="8sp"
                 android:textColor="#707070"
                 android:textSize="12sp" />
-
+        </LinearLayout>
         </LinearLayout>
     </LinearLayout>
         <ScrollView
